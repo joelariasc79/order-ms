@@ -5,7 +5,6 @@ pipeline {
         KUBE_CONFIG = "/home/ubuntu/.kube/config"
         AWS_REGION = "us-east-1"
         EKS_CLUSTER_NAME = "order-cluster"
-        
     }
     stages {
         stage('Checkout Code') {
@@ -16,6 +15,15 @@ pipeline {
         stage('Build & Test') {
             steps {
                 sh 'mvn clean package -DskipTests'
+            }
+        }
+        stage('Install Buildx') {
+            steps {
+                sh '''
+                    mkdir -p ~/.docker/cli-plugins
+                    curl -SL https://github.com/docker/buildx/releases/download/v0.22.0/buildx-v0.22.0.linux-amd64 -o ~/.docker/cli-plugins/docker-buildx
+                    chmod +x ~/.docker/cli-plugins/docker-buildx
+                '''
             }
         }
         stage('Docker Build & Push') {
@@ -38,27 +46,27 @@ pipeline {
             }
         }
         stage('Deploy to EKS') {
-    steps {
-        script {
-            withCredentials([[
-                $class: 'AmazonWebServicesCredentialsBinding',
-                credentialsId: 'aws-creds',  // Jenkins credential ID for AWS keys
-                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-            ]]) {
-                sh """
-                    # Configure kubectl for EKS
-                    aws eks update-kubeconfig \
-                      --region ${AWS_REGION} \
-                      --name ${EKS_CLUSTER_NAME}
+            steps {
+                script {
+                    withCredentials([[
+                        $class: 'AmazonWebServicesCredentialsBinding',
+                        credentialsId: 'aws-creds',   // Jenkins credential ID for AWS keys
+                        accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                        secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                    ]]) {
+                        sh """
+                            # Configure kubectl for EKS
+                            aws eks update-kubeconfig \
+                              --region ${AWS_REGION} \
+                              --name ${EKS_CLUSTER_NAME}
 
-                    # Apply manifests
-                    kubectl apply -f k8s-manifests/deployment.yaml
-                    kubectl apply -f k8s-manifests/service.yaml
-                """
+                            # Apply manifests
+                            kubectl apply -f k8s-manifests/deployment.yaml
+                            kubectl apply -f k8s-manifests/service.yaml
+                        """
+                    }
+                }
             }
         }
-    }
-}
     }
 }

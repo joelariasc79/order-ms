@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: order-ms
-        image: neeraj06092024/orderms:latest
+        image: joelarias/order-ms-app:latest
         ports:
         - containerPort: 8080

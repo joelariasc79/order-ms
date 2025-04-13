@@ -1,0 +1,1135 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.1)
+
+2025-04-08T03:40:24.996Z  INFO 3870 --- [           main] com.order.ms.OrderMsApplication          : Starting OrderMsApplication v0.0.1-SNAPSHOT using Java 17.0.14 with PID 3870 (/home/ubuntu/order-ms/target/order-ms-0.0.1-SNAPSHOT.jar started by ubuntu in /home/ubuntu/order-ms/target)
+2025-04-08T03:40:25.001Z  INFO 3870 --- [           main] com.order.ms.OrderMsApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-04-08T03:40:26.785Z  INFO 3870 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-08T03:40:26.923Z  INFO 3870 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 1 JPA repository interfaces.
+2025-04-08T03:40:28.436Z  INFO 3870 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-04-08T03:40:28.451Z  INFO 3870 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-08T03:40:28.451Z  INFO 3870 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2025-04-08T03:40:28.711Z  INFO 3870 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-08T03:40:28.717Z  INFO 3870 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3582 ms
+2025-04-08T03:40:28.825Z  INFO 3870 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-08T03:40:29.290Z  INFO 3870 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:ordersdb user=SA
+2025-04-08T03:40:29.291Z  INFO 3870 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-08T03:40:29.322Z  INFO 3870 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:ordersdb'
+2025-04-08T03:40:30.183Z  INFO 3870 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-08T03:40:30.365Z  INFO 3870 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
+2025-04-08T03:40:30.372Z  INFO 3870 --- [           main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2025-04-08T03:40:30.767Z  INFO 3870 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2025-04-08T03:40:31.110Z  INFO 3870 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-08T03:40:31.645Z  INFO 3870 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2025-04-08T03:40:32.841Z  INFO 3870 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-08T03:40:32.924Z  INFO 3870 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-08T03:40:33.692Z  WARN 3870 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-08T03:40:34.744Z  INFO 3870 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-04-08T03:40:34.952Z  INFO 3870 --- [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [3.233.140.151:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-orders-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = orders-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-04-08T03:40:35.307Z  INFO 3870 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2025-04-08T03:40:35.308Z  INFO 3870 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2025-04-08T03:40:35.308Z  INFO 3870 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1744083635304
+2025-04-08T03:40:35.312Z  INFO 3870 --- [           main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Subscribed to topic(s): reversed-orders
+2025-04-08T03:40:35.350Z  INFO 3870 --- [           main] com.order.ms.OrderMsApplication          : Started OrderMsApplication in 11.394 seconds (process running for 12.573)
+2025-04-08T03:40:44.373Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 9033 ms.
+2025-04-08T03:40:44.377Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:41:05.071Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 20571 ms.
+2025-04-08T03:41:05.071Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:41:36.404Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 31155 ms.
+2025-04-08T03:41:36.405Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:42:10.077Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 33407 ms.
+2025-04-08T03:42:10.079Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:42:38.518Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 27973 ms.
+2025-04-08T03:42:38.518Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:43:08.672Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 29404 ms.
+2025-04-08T03:43:08.673Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:43:44.232Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 34637 ms.
+2025-04-08T03:43:44.232Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:44:12.878Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 27494 ms.
+2025-04-08T03:44:12.878Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:44:43.584Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 29549 ms.
+2025-04-08T03:44:43.584Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:45:18.789Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 34158 ms.
+2025-04-08T03:45:18.789Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:45:44.844Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 24989 ms.
+2025-04-08T03:45:44.845Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:45:56.498Z  INFO 3870 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-08T03:45:56.499Z  INFO 3870 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-04-08T03:45:56.503Z  INFO 3870 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-04-08T03:46:13.489Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 27493 ms.
+2025-04-08T03:46:13.490Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:46:48.645Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 33915 ms.
+2025-04-08T03:46:48.645Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:47:16.535Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 26854 ms.
+2025-04-08T03:47:16.536Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:47:52.349Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 34871 ms.
+2025-04-08T03:47:52.352Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:48:22.602Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 29261 ms.
+2025-04-08T03:48:22.602Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:48:49.556Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 25841 ms.
+2025-04-08T03:48:49.557Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:49:19.609Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 28993 ms.
+2025-04-08T03:49:19.609Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:49:51.855Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 31220 ms.
+2025-04-08T03:49:51.856Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:50:17.863Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 24780 ms.
+2025-04-08T03:50:17.864Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:50:54.925Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 35998 ms.
+2025-04-08T03:50:54.926Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:51:27.166Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 31317 ms.
+2025-04-08T03:51:27.167Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:51:54.729Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 26570 ms.
+2025-04-08T03:51:54.730Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:52:31.569Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 35914 ms.
+2025-04-08T03:52:31.569Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:53:06.974Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 34284 ms.
+2025-04-08T03:53:06.974Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:53:34.986Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 27185 ms.
+2025-04-08T03:53:34.986Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:54:09.235Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 33275 ms.
+2025-04-08T03:54:09.235Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:54:39.791Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 29598 ms.
+2025-04-08T03:54:39.791Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:55:15.526Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 34685 ms.
+2025-04-08T03:55:15.526Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:55:43.640Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 26986 ms.
+2025-04-08T03:55:43.640Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:14.144Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node -1 due to socket connection setup timeout. The timeout value is 29365 ms.
+2025-04-08T03:56:14.144Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:19.435Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:19.435Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:19.435Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:20.481Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:20.481Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:20.481Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:21.586Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:21.586Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:21.586Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:22.441Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:22.441Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:22.441Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:23.347Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:23.347Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:23.347Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:24.503Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:24.503Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:24.503Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:25.483Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:25.484Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:25.484Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:26.642Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:26.642Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:26.642Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:27.598Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:27.599Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:27.599Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:28.704Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:28.704Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:28.705Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:29.709Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:29.709Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:29.709Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:30.834Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:30.835Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:30.835Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:31.990Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:31.990Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:31.990Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:32.845Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:32.846Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:32.846Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:33.901Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:33.901Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:33.901Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:35.006Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:35.007Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:35.007Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:36.087Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:36.087Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:36.087Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:36.992Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:36.993Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:36.993Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:38.047Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:38.047Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:38.047Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:39.151Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:39.152Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:39.152Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:40.005Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:40.005Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:40.005Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:40.887Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:40.888Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:40.888Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:41.693Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:41.693Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:41.693Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:42.649Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:42.649Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:42.649Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:43.657Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:43.657Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:43.657Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:44.660Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:44.660Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:44.660Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:45.636Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:45.636Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:45.636Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:46.742Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:46.742Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:46.742Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:47.597Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:47.598Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:47.598Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:48.452Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:48.452Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:48.452Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:49.260Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:49.260Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:49.260Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:50.215Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:50.216Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:50.217Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:51.087Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:51.087Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:51.087Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:51.941Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:51.941Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:51.941Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:53.047Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:53.048Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:53.048Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:53.952Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:53.952Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:53.952Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:55.158Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:56:55.158Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node -1 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:56:55.158Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Bootstrap broker 3.233.140.151:9092 (id: -1 rack: null) disconnected
+2025-04-08T03:56:56.789Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error while fetching metadata with correlation id 42 : {reversed-orders=LEADER_NOT_AVAILABLE}
+2025-04-08T03:56:56.793Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Cluster ID: dnQAmpk3T8KyiwBJ6lPmBQ
+2025-04-08T03:56:56.883Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error while fetching metadata with correlation id 45 : {reversed-orders=LEADER_NOT_AVAILABLE}
+2025-04-08T03:56:57.012Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error while fetching metadata with correlation id 47 : {reversed-orders=LEADER_NOT_AVAILABLE}
+2025-04-08T03:56:57.144Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error while fetching metadata with correlation id 49 : {reversed-orders=LEADER_NOT_AVAILABLE}
+2025-04-08T03:56:57.257Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Resetting the last seen epoch of partition reversed-orders-0 to 0 since the associated topicId changed from null to sI4POPq-RHC8YP8TkiAkMw
+2025-04-08T03:56:58.189Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Discovered group coordinator 3.233.140.151:9092 (id: 2147483647 rack: null)
+2025-04-08T03:56:58.194Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] (Re-)joining group
+2025-04-08T03:56:58.247Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Request joining group due to: need to re-join with the given member-id: consumer-orders-group-1-1112fd9c-72f8-40d0-8655-d8d0c736ff38
+2025-04-08T03:56:58.249Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2025-04-08T03:56:58.249Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] (Re-)joining group
+2025-04-08T03:56:58.299Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-orders-group-1-1112fd9c-72f8-40d0-8655-d8d0c736ff38', protocol='range'}
+2025-04-08T03:56:58.304Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Resetting the last seen epoch of partition new-orders-0 to 0 since the associated topicId changed from null to kWXTTkxqTBmsUG_-tXICAA
+2025-04-08T03:56:58.309Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Finished assignment for group at generation 1: {consumer-orders-group-2-6b8666a8-efc8-4d54-af9b-78be030bb930=Assignment(partitions=[new-orders-0]), consumer-orders-group-1-1112fd9c-72f8-40d0-8655-d8d0c736ff38=Assignment(partitions=[reversed-orders-0])}
+2025-04-08T03:56:58.378Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-orders-group-1-1112fd9c-72f8-40d0-8655-d8d0c736ff38', protocol='range'}
+2025-04-08T03:56:58.380Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Notifying assignor about the new Assignment(partitions=[reversed-orders-0])
+2025-04-08T03:56:58.389Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Adding newly assigned partitions: reversed-orders-0
+2025-04-08T03:56:58.408Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Found no committed offset for partition reversed-orders-0
+2025-04-08T03:56:58.427Z  INFO 3870 --- [ | orders-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Found no committed offset for partition reversed-orders-0
+2025-04-08T03:56:58.464Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Resetting offset for partition reversed-orders-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[3.233.140.151:9092 (id: 0 rack: null)], epoch=0}}.
+2025-04-08T03:56:58.500Z  INFO 3870 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : orders-group: partitions assigned: [reversed-orders-0]
+2025-04-08T03:57:01.304Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Request joining group due to: group is already rebalancing
+2025-04-08T03:57:01.305Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Revoke previously assigned partitions reversed-orders-0
+2025-04-08T03:57:01.306Z  INFO 3870 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : orders-group: partitions revoked: [reversed-orders-0]
+2025-04-08T03:57:01.307Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] (Re-)joining group
+2025-04-08T03:57:01.316Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-orders-group-1-1112fd9c-72f8-40d0-8655-d8d0c736ff38', protocol='range'}
+2025-04-08T03:57:01.623Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Finished assignment for group at generation 2: {consumer-orders-group-2-6b8666a8-efc8-4d54-af9b-78be030bb930=Assignment(partitions=[new-orders-0]), consumer-orders-group-1-5dd66fe5-fb69-416d-b379-152355abbeb6=Assignment(partitions=[]), consumer-orders-group-1-1112fd9c-72f8-40d0-8655-d8d0c736ff38=Assignment(partitions=[reversed-orders-0])}
+2025-04-08T03:57:01.628Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-orders-group-1-1112fd9c-72f8-40d0-8655-d8d0c736ff38', protocol='range'}
+2025-04-08T03:57:01.629Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Notifying assignor about the new Assignment(partitions=[reversed-orders-0])
+2025-04-08T03:57:01.629Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Adding newly assigned partitions: reversed-orders-0
+2025-04-08T03:57:01.636Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Setting offset for partition reversed-orders-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[3.233.140.151:9092 (id: 0 rack: null)], epoch=0}}
+2025-04-08T03:57:01.636Z  INFO 3870 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : orders-group: partitions assigned: [reversed-orders-0]
+2025-04-08T03:57:41.628Z  INFO 3870 --- [nio-8080-exec-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [3.233.140.151:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2025-04-08T03:57:41.650Z  INFO 3870 --- [nio-8080-exec-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Instantiated an idempotent producer.
+2025-04-08T03:57:41.675Z  INFO 3870 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2025-04-08T03:57:41.675Z  INFO 3870 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2025-04-08T03:57:41.675Z  INFO 3870 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1744084661675
+2025-04-08T03:57:41.697Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Resetting the last seen epoch of partition new-orders-0 to 0 since the associated topicId changed from null to kWXTTkxqTBmsUG_-tXICAA
+2025-04-08T03:57:41.698Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: dnQAmpk3T8KyiwBJ6lPmBQ
+2025-04-08T03:57:41.698Z  INFO 3870 --- [ad | producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1] ProducerId set to 1 with epoch 0
+2025-04-08T03:59:56.684Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T03:59:56.684Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T03:59:56.687Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.
+2025-04-08T03:59:56.687Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Cancelled in-flight FETCH request with correlation id 498 due to node 0 being disconnected (elapsed time since creation: 124ms, elapsed time since send: 124ms, request timeout: 30000ms)
+2025-04-08T03:59:56.689Z  INFO 3870 --- [ | orders-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 2147483647 disconnected.
+2025-04-08T03:59:56.689Z  INFO 3870 --- [ | orders-group] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node -1 disconnected.
+2025-04-08T03:59:56.689Z  INFO 3870 --- [ | orders-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Group coordinator 3.233.140.151:9092 (id: 2147483647 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: true. Rediscovery will be attempted.
+2025-04-08T03:59:56.687Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=354) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T03:59:56.786Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T03:59:56.786Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:59:56.791Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T03:59:56.792Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:59:56.887Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T03:59:56.888Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:59:56.942Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T03:59:56.942Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:59:57.090Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T03:59:57.090Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:59:57.195Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T03:59:57.195Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:59:57.595Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T03:59:57.595Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:59:57.647Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T03:59:57.648Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:59:58.352Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T03:59:58.352Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:59:58.503Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T03:59:58.503Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:59:59.158Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T03:59:59.158Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T03:59:59.358Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T03:59:59.358Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:00:00.116Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:00:00.117Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:00:00.213Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:00:00.213Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:00:01.274Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:00:01.276Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:00:01.363Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:00:01.363Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:00:02.483Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:00:02.483Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:00:02.568Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:00:02.568Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:00:03.423Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:00:03.423Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:00:33.799Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 30084 ms.
+2025-04-08T04:00:35.463Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.TimeoutException: Failed to send request after 30000 ms.
+
+2025-04-08T04:00:35.564Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 30976 ms.
+2025-04-08T04:00:35.564Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:01:05.517Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 28720 ms.
+2025-04-08T04:01:05.517Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:01:10.664Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 35672 ms.
+2025-04-08T04:01:38.080Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 31681 ms.
+2025-04-08T04:01:38.080Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:01:40.814Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 29082 ms.
+2025-04-08T04:02:10.474Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.TimeoutException: Failed to send request after 30000 ms.
+
+2025-04-08T04:02:14.611Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 32902 ms.
+2025-04-08T04:02:14.896Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 35604 ms.
+2025-04-08T04:02:14.897Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:02:49.113Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 33630 ms.
+2025-04-08T04:02:49.141Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 33152 ms.
+2025-04-08T04:02:49.141Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:03:15.677Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 25623 ms.
+2025-04-08T04:03:15.678Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:03:21.197Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 31112 ms.
+2025-04-08T04:03:42.287Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 25654 ms.
+2025-04-08T04:03:42.288Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:03:47.205Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 25035 ms.
+2025-04-08T04:04:12.940Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 29657 ms.
+2025-04-08T04:04:12.941Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:04:15.373Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 27085 ms.
+2025-04-08T04:04:39.899Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 25961 ms.
+2025-04-08T04:04:39.900Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:04:41.026Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 24431 ms.
+2025-04-08T04:05:09.497Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 28592 ms.
+2025-04-08T04:05:09.497Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:05:12.044Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 29783 ms.
+2025-04-08T04:05:34.498Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 24134 ms.
+2025-04-08T04:05:34.498Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:05:46.682Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 33826 ms.
+2025-04-08T04:06:01.738Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 26131 ms.
+2025-04-08T04:06:01.739Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:06:15.596Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 27664 ms.
+2025-04-08T04:06:31.689Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 29086 ms.
+2025-04-08T04:06:31.689Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:06:52.392Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 35800 ms.
+2025-04-08T04:06:59.353Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 26468 ms.
+2025-04-08T04:06:59.353Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:07:19.956Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 26522 ms.
+2025-04-08T04:07:26.740Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 26329 ms.
+2025-04-08T04:07:26.741Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:07:52.846Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 24903 ms.
+2025-04-08T04:07:52.846Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:07:56.954Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 35778 ms.
+2025-04-08T04:08:24.071Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 25894 ms.
+2025-04-08T04:08:25.489Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.TimeoutException: Failed to send request after 30000 ms.
+
+2025-04-08T04:08:27.347Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 33580 ms.
+2025-04-08T04:08:27.348Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:08:58.262Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 33258 ms.
+2025-04-08T04:09:00.494Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.TimeoutException: Failed to send request after 30000 ms.
+
+2025-04-08T04:09:02.452Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 34199 ms.
+2025-04-08T04:09:02.453Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:09:27.595Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 28350 ms.
+2025-04-08T04:09:30.163Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 26532 ms.
+2025-04-08T04:09:30.163Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:09:54.355Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 25902 ms.
+2025-04-08T04:09:58.713Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 27564 ms.
+2025-04-08T04:09:58.714Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:10:21.570Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 26039 ms.
+2025-04-08T04:10:30.503Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.TimeoutException: Failed to send request after 30000 ms.
+
+2025-04-08T04:10:34.420Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 34612 ms.
+2025-04-08T04:10:34.420Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:10:51.234Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 28449 ms.
+2025-04-08T04:11:00.958Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 25310 ms.
+2025-04-08T04:11:00.958Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:11:23.864Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 31495 ms.
+2025-04-08T04:11:35.511Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.TimeoutException: Failed to send request after 30000 ms.
+
+2025-04-08T04:11:36.264Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 34213 ms.
+2025-04-08T04:11:36.264Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:11:50.474Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 25698 ms.
+2025-04-08T04:12:02.925Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 25521 ms.
+2025-04-08T04:12:02.925Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:12:27.478Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 35809 ms.
+2025-04-08T04:12:35.517Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.TimeoutException: Failed to send request after 30000 ms.
+
+2025-04-08T04:12:38.225Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 34358 ms.
+2025-04-08T04:12:38.225Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:12:56.246Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 27684 ms.
+2025-04-08T04:13:08.330Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 29217 ms.
+2025-04-08T04:13:08.331Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:13:22.502Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 25153 ms.
+2025-04-08T04:13:40.521Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.TimeoutException: Failed to send request after 30000 ms.
+
+2025-04-08T04:13:44.740Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 35336 ms.
+2025-04-08T04:13:44.740Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:13:54.685Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 31261 ms.
+2025-04-08T04:14:10.040Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 24387 ms.
+2025-04-08T04:14:10.040Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:14:28.723Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 32785 ms.
+2025-04-08T04:14:43.385Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 32075 ms.
+2025-04-08T04:14:43.385Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:15:04.973Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 35182 ms.
+2025-04-08T04:15:15.149Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 30677 ms.
+2025-04-08T04:15:15.149Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:15:30.179Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 24106 ms.
+2025-04-08T04:15:46.037Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 29993 ms.
+2025-04-08T04:15:46.038Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:15:58.127Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:15:58.128Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:15:58.129Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:15:59.084Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:15:59.084Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:00.092Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:00.092Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:01.191Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:01.191Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:02.346Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:02.346Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:03.551Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:03.551Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:04.558Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:04.558Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:05.539Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:05.539Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:05.539Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error sending fetch request (sessionId=306775739, epoch=INITIAL) to node 0:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2025-04-08T04:16:05.606Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 0 due to socket connection setup timeout. The timeout value is 34226 ms.
+2025-04-08T04:16:06.393Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:06.393Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:06.459Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:06.459Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:07.499Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:07.499Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:07.564Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:07.564Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:08.472Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:08.480Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:08.667Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:08.667Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:09.645Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:09.645Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:09.828Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:09.828Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:10.690Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:10.690Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:10.704Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:10.704Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:11.745Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:11.745Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:11.812Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:11.812Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:12.666Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:12.666Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:12.801Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:12.801Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:13.660Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:13.660Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:13.770Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:13.770Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:14.513Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:14.513Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:14.728Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:14.728Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:15.372Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:15.372Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:15.584Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:15.584Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:16.495Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:16.495Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:16.591Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:16.591Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:17.405Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:17.405Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:17.701Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:17.701Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:18.466Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:18.467Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:18.917Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:18.917Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:19.523Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:19.524Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:20.024Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:20.024Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:20.690Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:20.690Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:21.080Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:21.080Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:21.799Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:21.799Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:22.087Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:22.087Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:22.804Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:22.804Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:22.941Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:22.941Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:23.711Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:23.711Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:23.745Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:23.746Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:24.599Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:24.599Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:24.867Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:24.868Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:25.753Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:25.755Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:25.844Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:25.845Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:26.749Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:26.749Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:26.812Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:26.812Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:27.905Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:27.906Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:28.017Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:28.017Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:28.871Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:28.871Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:29.060Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:29.060Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:29.980Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:29.981Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:30.269Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:30.269Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:30.785Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:30.785Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:31.097Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:31.097Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:31.995Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:31.996Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:32.201Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:32.201Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:32.950Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:32.950Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:33.157Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:33.159Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:34.060Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:34.065Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:34.165Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:34.165Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:35.066Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:35.066Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:35.374Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:35.374Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:36.026Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:36.026Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:36.549Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:36.549Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:37.134Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:37.134Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:37.504Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:37.504Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:38.342Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:38.342Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:38.460Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:38.461Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:39.498Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:39.499Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:39.564Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:39.564Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:40.469Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:40.469Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:40.505Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:40.505Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:41.361Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:41.364Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:41.623Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:41.623Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:42.565Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:42.565Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:42.576Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:42.577Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:43.518Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:43.519Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:43.580Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:43.580Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:44.437Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:44.438Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:44.523Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:44.523Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:45.442Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:45.449Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:45.731Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:45.731Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:46.654Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:46.655Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:46.737Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:46.738Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:47.809Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:47.809Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:47.842Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:47.842Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:48.663Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:48.663Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:48.799Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:48.799Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:49.818Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:49.818Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:49.903Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:49.904Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:50.858Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:50.859Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:50.953Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:50.954Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:51.807Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:51.809Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:51.963Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:51.963Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:52.662Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:52.662Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:52.819Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:52.819Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:53.718Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:53.718Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:53.726Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:53.726Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:54.680Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:54.680Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:54.924Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:54.925Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:55.684Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:55.684Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:56.102Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:56.102Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:56.839Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:56.840Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:56.956Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:56.956Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:57.860Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:57.860Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:57.944Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:57.944Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:58.865Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:58.865Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:59.150Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:16:59.150Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:16:59.769Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:16:59.770Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:00.105Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:00.105Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:00.651Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:00.652Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:01.060Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:01.060Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:01.506Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:01.506Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:02.114Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:02.115Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:02.609Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:02.610Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:03.218Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:03.219Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:03.764Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:03.764Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:04.222Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:04.223Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:04.969Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:04.969Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:05.276Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:05.276Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:05.952Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:05.952Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:06.181Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:06.181Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:06.856Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:06.857Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:07.337Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:07.337Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:07.961Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:07.961Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:08.543Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:08.543Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:09.116Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:09.116Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:09.498Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:09.498Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:10.222Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:10.222Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:10.602Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:10.603Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:11.305Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:11.305Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:11.606Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:11.606Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:12.309Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:12.309Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:12.510Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:12.510Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:13.364Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:13.364Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:13.714Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:13.715Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:14.569Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:14.569Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:14.769Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:14.769Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:15.602Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:15.602Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:15.974Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:15.975Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:16.607Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:16.607Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:17.129Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:17.129Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:17.469Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:17.469Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:17.991Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:17.991Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:18.372Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:18.372Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:19.147Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:19.147Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:19.427Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:19.427Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:20.302Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:20.303Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:20.530Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:20.530Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:21.356Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:21.356Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:21.433Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:21.433Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:22.486Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:22.486Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:22.563Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:22.563Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:23.519Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:23.519Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:23.591Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:23.591Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:24.374Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:24.374Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:24.745Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:24.745Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:25.428Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:25.429Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:25.853Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:25.853Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:26.433Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:26.433Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:27.007Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:27.008Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:27.388Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:27.389Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:28.060Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:28.061Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:28.443Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:28.443Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:29.113Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:29.113Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:29.398Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:29.398Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:29.967Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:29.967Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:30.354Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:30.354Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:31.054Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:31.054Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:31.560Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:31.560Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:32.059Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:32.059Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:32.465Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:32.465Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:33.164Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:33.164Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:33.469Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:33.470Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:34.271Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:34.271Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:34.322Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:34.322Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:35.177Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:35.177Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:35.227Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:35.227Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:36.332Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:36.332Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:36.406Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:36.407Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:37.287Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node 0 disconnected.
+2025-04-08T04:17:37.287Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:37.310Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Node 0 disconnected.
+2025-04-08T04:17:37.310Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Connection to node 0 (/3.233.140.151:9092) could not be established. Broker may not be available.
+2025-04-08T04:17:38.435Z  WARN 3870 --- [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Error while fetching metadata with correlation id 6 : {new-orders=LEADER_NOT_AVAILABLE}
+2025-04-08T04:17:38.437Z  INFO 3870 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: I7pCo-FiQAKHgDz0QdnXOQ
+2025-04-08T04:17:38.619Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error while fetching metadata with correlation id 600 : {new-orders=LEADER_NOT_AVAILABLE, reversed-orders=LEADER_NOT_AVAILABLE}
+2025-04-08T04:17:38.619Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Cluster ID: I7pCo-FiQAKHgDz0QdnXOQ
+2025-04-08T04:17:38.749Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error while fetching metadata with correlation id 602 : {new-orders=LEADER_NOT_AVAILABLE, reversed-orders=LEADER_NOT_AVAILABLE}
+2025-04-08T04:17:38.929Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error while fetching metadata with correlation id 604 : {new-orders=LEADER_NOT_AVAILABLE, reversed-orders=LEADER_NOT_AVAILABLE}
+2025-04-08T04:17:39.081Z  WARN 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Error while fetching metadata with correlation id 606 : {new-orders=LEADER_NOT_AVAILABLE, reversed-orders=LEADER_NOT_AVAILABLE}
+2025-04-08T04:17:39.187Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Resetting the last seen epoch of partition new-orders-0 to 0 since the associated topicId changed from null to vMvS0YtLRS6cPKGL4CsrcA
+2025-04-08T04:17:39.187Z  INFO 3870 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Resetting the last seen epoch of partition reversed-orders-0 to 0 since the associated topicId changed from null to NVtwc_LaTgGH4LuwqAc7Vw
+2025-04-08T04:17:40.019Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Discovered group coordinator 3.233.140.151:9092 (id: 2147483647 rack: null)
+2025-04-08T04:17:40.032Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Attempt to heartbeat with Generation{generationId=2, memberId='consumer-orders-group-1-1112fd9c-72f8-40d0-8655-d8d0c736ff38', protocol='range'} and group instance id Optional.empty failed due to UNKNOWN_MEMBER_ID, resetting generation
+2025-04-08T04:17:40.032Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Resetting generation and member id due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2025-04-08T04:17:40.032Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Request joining group due to: encountered UNKNOWN_MEMBER_ID from HEARTBEAT response
+2025-04-08T04:17:40.033Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Giving away all assigned partitions as lost since generation/memberID has been reset,indicating that consumer is in old state or no longer part of the group
+2025-04-08T04:17:40.033Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Lost previously assigned partitions reversed-orders-0
+2025-04-08T04:17:40.038Z  INFO 3870 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : orders-group: partitions lost: [reversed-orders-0]
+2025-04-08T04:17:40.039Z  INFO 3870 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : orders-group: partitions revoked: [reversed-orders-0]
+2025-04-08T04:17:40.039Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] (Re-)joining group
+2025-04-08T04:17:40.070Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Request joining group due to: need to re-join with the given member-id: consumer-orders-group-1-8bd89697-9335-42cc-9afa-e47aa2ccfc03
+2025-04-08T04:17:40.070Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2025-04-08T04:17:40.070Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] (Re-)joining group
+2025-04-08T04:17:40.115Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-orders-group-1-8bd89697-9335-42cc-9afa-e47aa2ccfc03', protocol='range'}
+2025-04-08T04:17:40.115Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Finished assignment for group at generation 1: {consumer-orders-group-1-8bd89697-9335-42cc-9afa-e47aa2ccfc03=Assignment(partitions=[reversed-orders-0])}
+2025-04-08T04:17:40.196Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-orders-group-1-8bd89697-9335-42cc-9afa-e47aa2ccfc03', protocol='range'}
+2025-04-08T04:17:40.196Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Notifying assignor about the new Assignment(partitions=[reversed-orders-0])
+2025-04-08T04:17:40.196Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Adding newly assigned partitions: reversed-orders-0
+2025-04-08T04:17:40.206Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Found no committed offset for partition reversed-orders-0
+2025-04-08T04:17:40.209Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Found no committed offset for partition reversed-orders-0
+2025-04-08T04:17:40.601Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Resetting offset for partition reversed-orders-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[3.233.140.151:9092 (id: 0 rack: null)], epoch=0}}.
+2025-04-08T04:17:40.616Z  INFO 3870 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : orders-group: partitions assigned: [reversed-orders-0]
+2025-04-08T04:17:43.120Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Request joining group due to: group is already rebalancing
+2025-04-08T04:17:43.120Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Revoke previously assigned partitions reversed-orders-0
+2025-04-08T04:17:43.120Z  INFO 3870 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : orders-group: partitions revoked: [reversed-orders-0]
+2025-04-08T04:17:43.120Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] (Re-)joining group
+2025-04-08T04:17:43.129Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-orders-group-1-8bd89697-9335-42cc-9afa-e47aa2ccfc03', protocol='range'}
+2025-04-08T04:17:43.129Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Finished assignment for group at generation 2: {consumer-orders-group-1-dd8dce8d-2fe4-46cc-b9e4-1a1aff160f6f=Assignment(partitions=[]), consumer-orders-group-1-8bd89697-9335-42cc-9afa-e47aa2ccfc03=Assignment(partitions=[reversed-orders-0])}
+2025-04-08T04:17:43.132Z  INFO 3870 --- [ | orders-group] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-orders-group-1-8bd89697-9335-42cc-9afa-e47aa2ccfc03', protocol='range'}
+2025-04-08T04:17:43.132Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Notifying assignor about the new Assignment(partitions=[reversed-orders-0])
+2025-04-08T04:17:43.132Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Adding newly assigned partitions: reversed-orders-0
+2025-04-08T04:17:43.138Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Setting offset for partition reversed-orders-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[3.233.140.151:9092 (id: 0 rack: null)], epoch=0}}
+2025-04-08T04:17:43.138Z  INFO 3870 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : orders-group: partitions assigned: [reversed-orders-0]
+2025-04-08T04:22:40.208Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Request joining group due to: cached metadata has changed from (version30: {new-orders=1, reversed-orders=1}) at the beginning of the rebalance to (version31: {reversed-orders=1})
+2025-04-08T04:22:40.208Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Revoke previously assigned partitions reversed-orders-0
+2025-04-08T04:22:40.208Z  INFO 3870 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : orders-group: partitions revoked: [reversed-orders-0]
+2025-04-08T04:22:40.208Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] (Re-)joining group
+2025-04-08T04:22:40.670Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-orders-group-1-8bd89697-9335-42cc-9afa-e47aa2ccfc03', protocol='range'}
+2025-04-08T04:22:40.670Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Finished assignment for group at generation 3: {consumer-orders-group-1-dd8dce8d-2fe4-46cc-b9e4-1a1aff160f6f=Assignment(partitions=[]), consumer-orders-group-1-8bd89697-9335-42cc-9afa-e47aa2ccfc03=Assignment(partitions=[reversed-orders-0])}
+2025-04-08T04:22:40.673Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-orders-group-1-8bd89697-9335-42cc-9afa-e47aa2ccfc03', protocol='range'}
+2025-04-08T04:22:40.673Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Notifying assignor about the new Assignment(partitions=[reversed-orders-0])
+2025-04-08T04:22:40.673Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Adding newly assigned partitions: reversed-orders-0
+2025-04-08T04:22:40.676Z  INFO 3870 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-orders-group-1, groupId=orders-group] Setting offset for partition reversed-orders-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[3.233.140.151:9092 (id: 0 rack: null)], epoch=0}}
+2025-04-08T04:22:40.676Z  INFO 3870 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : orders-group: partitions assigned: [reversed-orders-0]

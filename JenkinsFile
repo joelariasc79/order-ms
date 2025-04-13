@@ -1,16 +1,16 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = "neeraj06092024/orderms"
+        DOCKER_IMAGE = "joelarias/order-ms-app"
         KUBE_CONFIG = "/home/ubuntu/.kube/config"
-        AWS_REGION = "eu-central-1"
+        AWS_REGION = "us-east-1"
         EKS_CLUSTER_NAME = "order-cluster"
         
     }
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/neerajbalodi/order-ms.git'
+                git branch: 'main', url: 'https://github.com/joelariasc79/order-ms.git'
             }
         }
         stage('Build & Test') {
